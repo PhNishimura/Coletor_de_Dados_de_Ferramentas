@@ -1,0 +1,100 @@
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background-color: #f0f0f0;
+}
+
+header {
+    display: flex;
+    align-items: center;
+    justify-content: center; /* Opcional: alinha os itens no centro horizontalmente */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    color: black;
+    padding: 20px;
+    background-color: #007BFF; /* Adicione uma cor de fundo se necessário */
+    text-align: center;
+    z-index: 1000; /* Garante que o header fique acima de outros elementos */
+}
+
+header .logo {
+    height: 50px; /* Ajuste o tamanho da logo conforme necessário */
+    margin-right: 15px; /* Espaçamento entre a imagem e o título */
+}
+
+header h1 {
+    margin: 0; /* Remove a margem padrão do h1 */
+}
+
+.container {
+    background-color: #fff;
+    padding: 32px;
+    border-radius: 8px; /* Ajuste o border-radius para um valor mais padrão */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 80%;
+    max-width: 800px;
+    max-height: 70vh; /* Define uma altura máxima para o contêiner */
+    margin-top: 100px; /* Ajuste para garantir que o contêiner não fique escondido sob o header fixo */
+    overflow-y: auto; /* Adiciona rolagem vertical quando o conteúdo excede a altura do contêiner */
+}
+
+h2 {
+    margin-top: 0;
+}
+
+form {
+    margin-bottom: 20px;
+}
+
+label {
+    display: block;
+    margin: 10px 0 5px;
+}
+
+input {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 10px;
+}
+
+button {
+    padding: 10px 15px;
+    background-color: #007BFF;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+table, th, td {
+    border: 1px solid #ddd;
+}
+
+th, td {
+    padding: 10px;
+    text-align: left;
+}
+
+th {
+    background-color: #f2f2f2;
+}
+
+img {
+    max-width: 100px;
+}

@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Coletor de Dados de Ferramentas</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+
+<body>
+
+    <header>
+        <img src="shb.jpg" class="logo"/>
+        <h1>SHB</h1> 
+    </header>
+
+
+    <div class="container">
+        <h1>Coletor de Dados de Ferramentas</h1>
+        <form id="toolForm">
+
+            <label for="height">Altura:</label>
+            <input type="text" id="height" name="height" required>
+
+            <label for="width">Largura:</label>
+            <input type="text" id="width" name="width" required>
+
+            <label for="length">Comprimento:</label>
+            <input type="text" id="length" name="length" required>
+
+            <label for="weight">Peso:</label>
+            <input type="text" id="weight" name="weight" required>
+            
+            <label for="machine">Maquina:</label>
+            <input type="text" id="machine" name="machine" required>
+        
+            <label for="numberI">Número do imbolizado</label>
+            <input type="text" id="numberI" name="numberI">
+
+
+            
+            <button type="button" onclick="addTool()">Adicionar Ferramenta</button>
+        </form>
+        
+        <table id="toolTable">
+            <thead>
+                <tr>
+                    <th>Altura</th>
+                    <th>Largura</th>
+                    <th>Comprimento</th>
+                    <th>Peso</th>
+                    <th>Maquina</th>
+                    <th>Número do imbolizado</th>
+
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Dados das ferramentas serão inseridos aqui -->
+            </tbody>
+        </table>
+        
+        <button onclick="exportToCSV()">Exportar para CSV</button>
+    </div>
+    
+    <script src="script.js"></script>
+</body>
+</html>
