@@ -71,11 +71,46 @@ button {
     border: none;
     border-radius: 4px;
     cursor: pointer;
+    margin: 5px; /* Espaçamento entre os botões */
 }
 
-button:hover {
-    background-color: #0056b3;
+.button-group {
+    display: flex;               /* Usa flexbox para layout */
+    justify-content: space-between; /* Espaça os itens igualmente entre as extremidades */
+    margin-top: 20px;            /* Adiciona um espaço superior para separar do conteúdo acima */
 }
+
+.button-group button {
+    padding: 10px 15px;
+    background-color: #007BFF;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    margin: 5px;                 /* Adiciona espaço entre os botões */
+}
+
+.button-group button:hover {
+    background-color: #0056b3;   /* Muda a cor ao passar o mouse */
+}
+
+.button-group .export {
+    background-color: #28a745;   /* Cor verde para o botão de exportação */
+}
+
+.button-group .export:hover {
+    background-color: #218838;   /* Cor verde escuro ao passar o mouse */
+}
+
+.button-group .clear {
+    background-color: #dc3545;   /* Cor vermelha para o botão de limpar dados */
+}
+
+.button-group .clear:hover {
+    background-color: #c82333;   /* Cor vermelha escura ao passar o mouse */
+}
+
+
 
 table {
     width: 100%;

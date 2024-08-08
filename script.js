@@ -1,3 +1,4 @@
+// Função para adicionar ferramenta e armazenar no localStorage
 function addTool() {
     // Obtendo valores dos campos do formulário
     const height = document.getElementById('height').value;
@@ -23,6 +24,9 @@ function addTool() {
         
         tableBody.appendChild(row);
         
+        // Armazenar dados no localStorage
+        storeData();
+        
         // Limpar o formulário após adicionar
         document.getElementById('toolForm').reset();
     } else {
@@ -30,6 +34,44 @@ function addTool() {
     }
 }
 
+// Função para armazenar os dados da tabela no localStorage
+function storeData() {
+    const rows = Array.from(document.querySelectorAll('#toolTable tbody tr')).map(row => {
+        return Array.from(row.querySelectorAll('td')).map(cell => cell.innerText);
+    });
+    
+    localStorage.setItem('toolData', JSON.stringify(rows));
+}
+
+// Função para carregar os dados armazenados no localStorage
+function loadData() {
+    const storedData = localStorage.getItem('toolData');
+    if (storedData) {
+        const rows = JSON.parse(storedData);
+        const tableBody = document.querySelector('#toolTable tbody');
+        
+        rows.forEach(rowData => {
+            const row = document.createElement('tr');
+            rowData.forEach(cellData => {
+                const cell = document.createElement('td');
+                cell.innerText = cellData;
+                row.appendChild(cell);
+            });
+            tableBody.appendChild(row);
+        });
+    }
+}
+
+function clearData(){
+    //Limpa dados 
+    localStorage.removeItem('toolData');
+
+    // Limpar a tabela na página
+    const tableBody = document.querySelector('#toolTable tbody');
+    tableBody.innerHTML = '';
+}
+
+// Função para exportar os dados para CSV
 function exportToCSV() {
     const rows = [];
     const table = document.getElementById('toolTable');
@@ -57,3 +99,6 @@ function exportToCSV() {
     link.click();
     document.body.removeChild(link);
 }
+
+// Carregar os dados ao carregar a página
+document.addEventListener('DOMContentLoaded', loadData);
